@@ -1,0 +1,13 @@
+web-app:
+    build: web-app
+    volumes:
+        - web-app:/usr/local/webappcontainer/
+    ports:
+        - "5000:5000"
+    links:
+        - mysqlcontainer:mysqldb
+
+mysqlcontainer:
+    build: mysqlDock
+    ports:
+        - "3306:3306"
